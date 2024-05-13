@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 13, 2024 at 01:38 PM
+-- Generation Time: May 13, 2024 at 02:14 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -48,7 +48,8 @@ CREATE TABLE `kendaraan` (
   `tahun` char(4) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
   `harga` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `unit` text NOT NULL
+  `unit` text NOT NULL,
+  `customer_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -94,7 +95,8 @@ ALTER TABLE `customer`
 -- Indexes for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
-  ADD PRIMARY KEY (`kendaraan_id`);
+  ADD PRIMARY KEY (`kendaraan_id`),
+  ADD UNIQUE KEY `customer_id` (`customer_id`);
 
 --
 -- Indexes for table `transaksi`
@@ -139,6 +141,12 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `kendaraan` (`customer_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 --
 -- Constraints for table `kendaraan`
