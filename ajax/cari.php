@@ -1,48 +1,8 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['login'])) {
-    header("Location: ../login/login.php");
-    exit;
-}
-
-
 require'../function/functions.php';
-$product = query("SELECT * FROM kendaraan");
-
-// ketika tombol cari diketik
-if (isset($_POST['cari'])) {
-    $product = cari($_POST['keyword']);
-}
-
+$product = cari($_GET['keyword']);
 ?>
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin_Dealer's Automotive</title>
-    <link rel="stylesheet" href="../css/">
-   
-  </head>
-<body>
-<?php require "../views/partials/nav.php"; ?>
-<div class="container">
-    <h3 class="text-center py-3">Daftar Kendaraan</h3>
-
-    <!-- <a href="tambah.php" class="btn btn-info">Tambah Data Kendaraan</a>
-    <br><br> -->
-
-    <form action="" method="POST">
-        <input type="text" name="keyword" size="40" placeholder="masukan keyword pencarian....." autocomplete="off" autofocus class="keyword">
-        <button type="submit" name="cari" class="tombol-cari">Cari</button>
-    </form>
-    <br>
-</div>
-<div class="container2">
-    <table border="1" cellpadding="10" cellspacing="0" class="table table-striped">
+ <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>#</th>
                 <th>Gambar</th>
@@ -83,9 +43,3 @@ if (isset($_POST['cari'])) {
             </tr>
                 <?php endforeach; ?>
     </table>
-</div>
-
-    <script src="../js/script.js"></script>
-<?php require'../views/partials/footer.php'; ?>
- </body>
- </html>

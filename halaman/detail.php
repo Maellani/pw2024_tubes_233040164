@@ -1,5 +1,5 @@
 <?php
-require'../views/partials/nav.php';
+
 session_start();
 
 if(!isset($_SESSION['login'])) {
@@ -40,13 +40,8 @@ $p = query("SELECT * FROM kendaraan WHERE id = $id");
     <li>Tahun : <?= $p["tahun"]; ?></li>
     <li>Harga : <?= $p["harga"]; ?></li>
     <li>Stok : <?= $p["stok"]; ?></li>
-    <br>
-    <li>
-        <a href="ubah.php?id=<?= $p['id']; ?>" class="btn btn-warning">ubah</a>
-        <a href="hapus.php?id=<?= $p['id']; ?>" onclick="return confirm ('apakah anda yakin?');" class="btn btn-danger">hapus</a>
-    </li>
-    <br>
-    <li><a href="index.php" class="btn btn-info">Kembali ke daftar kendaraan</a></li>
+   
+    <li><a href="halaman.user.php" class="btn btn-info">Kembali ke daftar kendaraan</a></li>
 </ul>  
 </div>
 </div>

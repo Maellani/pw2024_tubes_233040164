@@ -4,13 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Halaman_Admin</title>
-    <!-- Link Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#"> <h2 class="fw-bold mb-2 mb-lg-0 mb-sm-0">Admin Dealer's Automotive</h2></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,21 +22,20 @@
             <li class="nav-item mx-3">
               <a class="nav-link" href="../halaman/tambah.php">Tambah</a>
             </li>
-            <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          </form>
-          <ul class="navbar-nav mb-2 mb-lg-0 action-menu">
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="../halaman/halaman.user.php">Users</a>
+            </li>
+          <ul class="navbar-nav mx-3 mb-lg-0 action-menu">
             <li class="nav-item">
               <a class="nav-link" href="../login/logout.php">Logout</a>
             </li>
           </ul>
+
         </div>
       </div>
     </nav>
     
-   
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
   </html>
   
+   

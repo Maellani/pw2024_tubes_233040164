@@ -43,100 +43,36 @@ if (isset($_POST['ubah'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ubah_Data_Kendaraan</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Style Css -->
-    <style>
-        h3{
-            text-align: center;
-        }
-        form {
-            width: 300px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        label {
-            display: inline-block;
-            width: 150px;
-            text-align: left;
-            margin-right: 10px;
-        }
-        input {
-            width: (100% - 160px);
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px;
-            background-color: #155ea1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/ubah.css">
   </head>
   <body>
-<br>
-<h3>Form Ubah Data Kendaraan</h3>
+<h3 class="text-center py-3">Form Ubah Data Kendaraan</h3>
 <form action="" method="POST">
     <input type="hidden" name="id" value="<?= $p['id']; ?>">
-<ul ul style="list-style: none;">
+<ul>
     <li>
-        <label>
-           Gambar :
-            <input type="text" name="image" autofocus required value="<?= $p['image']; ?>">
-        </label>
+        <label>Gambar : <input type="text" name="image" autofocus required value="<?= $p['image']; ?>"></label>
     </li>
     <li>
-        <label>
-           Nama :
-            <input type="text" name="nama" required value="<?= $p['nama']; ?>">
-        </label>
+        <label>Nama : <input type="text" name="nama" required value="<?= $p['nama']; ?>"></label>
     </li>
     <li>
-        <label>
-           Merk :
-            <input type="text" name="merk" required value="<?= $p['merk']; ?>">
-        </label>
+        <label>Merk : <input type="text" name="merk" required value="<?= $p['merk']; ?>"></label>
     </li>
     <li>
-        <label>
-           Spesifikasi :
-            <input type="text" name="spesifikasi" required value="<?= $p['spesifikasi']; ?>">
-        </label>
+        <label>Spesifikasi : <input type="text" name="spesifikasi" required value="<?= $p['spesifikasi']; ?>"></label>
     </li>
     <li>
-        <label>
-           Tahun :
-            <input type="text" name="tahun" required value="<?= $p['tahun']; ?>">
-        </label>
+        <label>Tahun : <input type="text" name="tahun" required value="<?= $p['tahun']; ?>"></label>
     </li>
     <li>
-        <label>
-           Harga :
-            <input type="text" name="harga" required value="<?= $p['harga']; ?>">
-        </label>
+        <label>Harga : <input type="text" name="harga" required value="<?= $p['harga']; ?>"></label>
     </li>
     <li>
-        <label>
-           Stok :
-            <input type="text" name="stok" required value="<?= $p['stok']; ?>">
-        </label>
+        <label>Stok : <input type="text" name="stok" required value="<?= $p['stok']; ?>"></label>
     </li>
-    <br>
     <li>
-        <button type="submit" name="ubah" class="btn btn-success">Ubah Data</button> <a href="index.php" style="text-decoration: none;" class="btn btn-secondary">Kembali</a>
+        <button type="submit" name="ubah" class="btn btn-warning">Ubah Data</button> <a href="index.php" style="text-decoration: none;" class="btn btn-secondary">Kembali</a>
     </li>
 </ul>
 </form>

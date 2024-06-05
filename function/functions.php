@@ -28,12 +28,75 @@ return $rows;
 }
 
 
+// fungsi upload
+function upload()
+{
+  $nama_file = $_FILES['image']['name'];
+  $tipe_file = $_FILES['image']['type'];   
+  $ukuran_file = $_FILES['image']['size'];   
+  $error = $_FILES['image']['error'];   
+  $tmp_file = $_FILES['image']['tmp_name']; 
+  
+  // ketika tidak ada gambar yang dipilih
+  if ($error == 4) {
+    echo "<script>
+            alert('pilih gambar terlebih dahulu!');
+        </script>";
+    return false;
+  }
+
+  // cek ekstensi file
+  $daftar_image = ['jpg', 'jpeg', 'png'];
+  $ekstensi_file = explode('.', $nama_file);
+  $ekstensi_file = strtolower(end($ekstensi_file));
+  if(!in_array($ekstensi_file, $daftar_image)) {
+    echo "<script>
+            alert('yang anda pilih bukan gambar!');
+        </script>";
+    return false;
+  }
+
+  // cek type file
+  if ($tipe_file != 'image/jpeg' &&  $tipe_file != 'image/png') {
+    echo "<script>
+            alert('yang anda pilih bukan gambar!');
+        </script>";
+    return false;
+  } 
+
+  // cek ukuran file max 5Mb == 5000000 
+  if($ukuran_file > 5000000) {
+    echo "<script>
+            alert('ukuran terlalu besar!');
+        </script>";
+    return false;
+  }
+
+  // lolos pengecekan 
+  // siap upload file
+  // generate nama file baru
+  $nama_file_baru = uniqid();
+  $nama_file_baru .= '.';
+  $nama_file_baru .= $ekstensi_file;
+  move_uploaded_file($tmp_file, '../img/' . $nama_file_baru);
+
+  return $nama_file_baru;
+}
+
+
 // fungsi tambah
 function tambah($data) 
 {
     $conn = koneksi();
 
-    $image = htmlspecialchars($data['image']);
+    //upload gambar (ketika function tambah bernilai false)
+    $image = upload();
+    if (!$image) {
+        return false;
+    }
+
+
+    // $image = htmlspecialchars($data['image']);
     $nama = htmlspecialchars($data['nama']);
     $merk = htmlspecialchars($data['merk']);
     $spesifikasi = htmlspecialchars($data['spesifikasi']);
@@ -41,8 +104,8 @@ function tambah($data)
     $harga = htmlspecialchars($data['harga']);
     $stok = htmlspecialchars($data['stok']);
 
-    $query = "INSERT INTO kendaraan
-                VALUES('0', '$image', '$nama', '$merk', '$spesifikasi', '$tahun', '$harga', '$stok')
+    $query = "INSERT INTO kendaraan(image,nama, merk, spesifikasi, tahun, harga, stokx  )
+                VALUES('$image', '$nama', '$merk', '$spesifikasi', '$tahun', '$harga', '$stok')
             ";
     mysqli_query($conn, $query) or die(mysqli_error($conn));
     echo  mysqli_error($conn);
@@ -51,13 +114,18 @@ function tambah($data)
 
 // fungsi keyword cari
 function cari($keyword) {
+
+    // var_dump($keyword); die();
     $conn = koneksi();
 
     $query = "SELECT * FROM kendaraan
                 WHERE 
                 nama LIKE '%$keyword%' OR 
                 merk LIKE '%$keyword%' OR
-                tahun LIKE '%$keyword%'
+                spesifikasi LIKE '%$keyword%' OR
+                tahun LIKE '%$keyword%' OR
+                harga LIKE '%$keyword%' OR
+                stok LIKE '%$keyword%' 
                 ";
     $result = mysqli_query($conn, $query);
     $rows = [];
@@ -116,18 +184,29 @@ function login($data)
     $username = htmlspecialchars($data['username']);
     $password = htmlspecialchars($data['password']);
 
-    if (query("SELECT * FROM users WHERE username = '$username' && password = '$password'"))  {
-        // set session
-        $_SESSION['login'] = true;
+    // cek dulu username
+    if ($users = query("SELECT * FROM users WHERE username = '$username'")) {
+        // cek password
+        if (password_verify($password, $users['password'])) {
+            // set session
+            $level = query("SELECT level FROM users WHERE username = '$username'")["level"];
 
-        header("Location: ../halaman/index.php");
-        exit;
-    } else {
-        return [
-            'error' => true,
+            $_SESSION['level'] = $level;
+            $_SESSION['login'] = true;
+            
+            if ($level === "Admin") {
+                header("Location: ../halaman/dashboard.php");
+                exit;
+            } else {
+                header("Location: ../halaman/halaman.user.php");
+                exit;
+            }
+        }
+     } //jika gagal pasti akan ke sini
+         return [
+             'error' => true,
             'pesan' => 'Username / Password Salah!'
-        ];
-    }
+         ];
 }
 
 
@@ -146,7 +225,7 @@ function registrasi($data)
         echo "<script>
         alert('username / password tidak boleh kosong!');
         document.location.href = 'registrasi.php';
-        </script>";
+        </>";
         return false;
     }
 
@@ -182,8 +261,8 @@ function registrasi($data)
     $password_baru = password_hash($password1, PASSWORD_DEFAULT);
     // insert ke tabel users
     $query = "INSERT INTO users
-               VALUES 
-                (null, '$username', '$password_baru')
+               (username, password) VALUES
+                ('$username', '$password_baru')
             ";
     mysqli_query($conn, $query) or die(mysqli_error($conn));
     return mysqli_affected_rows($conn);

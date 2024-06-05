@@ -31,15 +31,15 @@ if (isset($_POST['tambah'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tambah_Data_Kendaraan</title>
-    <link rel="stylesheet" href="../css/">
+    <link rel="stylesheet" href="../css/tambah.css">
    
   </head>
 <body>
     <h3 class="text-center py-3">Tambah Data Kendaraan</h3>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <ul style="list-style: none;">
             <li>
-                <label>Gambar : <input type="text" name="image" autofocus autocomplete="off" required></label>
+                <label>Gambar : <input type="file" name="image" autofocus autocomplete="off"></label>
             </li>
             <li>
                 <label>Nama : <input type="text" name="nama" autocomplete="off" required></label>
