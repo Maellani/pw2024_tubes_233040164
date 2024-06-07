@@ -34,7 +34,6 @@ if (isset($_POST['ubah'])) {
     }
 }
 
-
 ?>
 
 <!doctype html>
@@ -43,39 +42,80 @@ if (isset($_POST['ubah'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ubah_Data_Kendaraan</title>
-    <link rel="stylesheet" href="../css/ubah.css">
+    <style>
+        body {
+        color: #eee;
+        }
+
+        form {
+        max-width: 200%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #222;
+        text-align: center;
+        }
+
+        h3 {
+        text-align: center;
+        }
+
+        ul {
+        list-style: none;
+        padding: 0;
+        }
+
+        li {
+        margin-bottom: 10px;
+        }
+
+        label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: white;
+        }
+
+        input {
+        width: 100vh;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 50px;
+        background-color: transparent;
+        color: #eee;
+        }
+    </style>
   </head>
   <body>
-<h3 class="text-center py-3">Form Ubah Data Kendaraan</h3>
-<form action="" method="POST">
-    <input type="hidden" name="id" value="<?= $p['id']; ?>">
-<ul>
-    <li>
-        <label>Gambar : <input type="text" name="image" autofocus required value="<?= $p['image']; ?>"></label>
-    </li>
-    <li>
-        <label>Nama : <input type="text" name="nama" required value="<?= $p['nama']; ?>"></label>
-    </li>
-    <li>
-        <label>Merk : <input type="text" name="merk" required value="<?= $p['merk']; ?>"></label>
-    </li>
-    <li>
-        <label>Spesifikasi : <input type="text" name="spesifikasi" required value="<?= $p['spesifikasi']; ?>"></label>
-    </li>
-    <li>
-        <label>Tahun : <input type="text" name="tahun" required value="<?= $p['tahun']; ?>"></label>
-    </li>
-    <li>
-        <label>Harga : <input type="text" name="harga" required value="<?= $p['harga']; ?>"></label>
-    </li>
-    <li>
-        <label>Stok : <input type="text" name="stok" required value="<?= $p['stok']; ?>"></label>
-    </li>
-    <li>
-        <button type="submit" name="ubah" class="btn btn-warning">Ubah Data</button> <a href="index.php" style="text-decoration: none;" class="btn btn-secondary">Kembali</a>
-    </li>
-</ul>
-</form>
+    <h3 class="text-center py-3">Form Ubah Data Kendaraan</h3>
+    <form action="" method="POST">
+        <input type="hidden" name="id" value="<?= $p['id']; ?>">
+    <ul>
+        <li>
+            <label>Gambar : <input type="text" name="image" autofocus required value="<?= $p['image']; ?>"></label>
+        </li>
+        <li>
+            <label>Nama : <input type="text" name="nama" required value="<?= $p['nama']; ?>"></label>
+        </li>
+        <li>
+            <label>Merk : <input type="text" name="merk" required value="<?= $p['merk']; ?>"></label>
+        </li>
+        <li>
+            <label>Spesifikasi : <input type="text" name="spesifikasi" required value="<?= $p['spesifikasi']; ?>"></label>
+        </li>
+        <li>
+            <label>Tahun : <input type="text" name="tahun" required value="<?= $p['tahun']; ?>"></label>
+        </li>
+        <li>
+            <label>Harga : <input type="text" name="harga" required value="<?= $p['harga']; ?>"></label>
+        </li>
+        <li>
+            <label>Stok : <input type="text" name="stok" required value="<?= $p['stok']; ?>"></label>
+        </li>
+        <li>
+            <button type="submit" name="ubah" class="btn btn-warning">Ubah Data</button> <a href="index.php" style="text-decoration: none;" class="btn btn-secondary">Kembali</a>
+        </li>
+    </ul>
+    </form>
 
 <?php
 require'../views/partials/footer.php';

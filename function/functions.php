@@ -104,7 +104,7 @@ function tambah($data)
     $harga = htmlspecialchars($data['harga']);
     $stok = htmlspecialchars($data['stok']);
 
-    $query = "INSERT INTO kendaraan(image,nama, merk, spesifikasi, tahun, harga, stokx  )
+    $query = "INSERT INTO kendaraan(image, nama, merk, spesifikasi, tahun, harga, stok )
                 VALUES('$image', '$nama', '$merk', '$spesifikasi', '$tahun', '$harga', '$stok')
             ";
     mysqli_query($conn, $query) or die(mysqli_error($conn));

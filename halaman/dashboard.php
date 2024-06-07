@@ -1,65 +1,13 @@
 <?php
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman_Admin</title>
-    <!-- <style>
+    <style>
         * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-            width: 50%;
-            color: white;
-            margin: auto;
-        }
-        
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            text-align: center;
-            background-color: gray;
-            width: 80%;
-            height: 80%;
-            font-size: 1rem;
-            font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-            border-radius: 50px;
-        }
-
-        button {
-            font-size: 1rem;
-            background-color: lightblue;
-            border-radius: 50px;
-            padding: 5px;
-            border: 2px solid black;
-            width: 100px;
-            cursor: pointer;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }  
-
-    </style> -->
-        <style>
-        * {
-        /* margin: 0;
-        padding: 0;
-        box-sizing: border-box; */
         font-family: "Poppins", sans-serif;
         }
 
@@ -88,7 +36,6 @@
         .container .btn {
         width: 100%;
         height: 45px;
-        /* background: transparent; */
         background: #fff;
         border: none;
         outline: none;
@@ -108,12 +55,12 @@
         .container a:hover {
         text-decoration: underline;
         }
-        </style>
+    </style>
 </head>
 <body>
     <div class="container">
-            <h1>Selamat datang Admin</h1>        
-            <button type="submit" class="btn"><a href="index.php">Home</a></button>
+        <h1>Selamat datang Admin</h1>        
+        <button type="submit" class="btn"><a href="index.php">Home</a></button>
     </div>
 </body>
 </html>

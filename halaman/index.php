@@ -6,7 +6,6 @@ if(!isset($_SESSION['login'])) {
     exit;
 }
 
-
 require'../function/functions.php';
 $product = query("SELECT * FROM kendaraan");
 
@@ -17,24 +16,17 @@ if (isset($_POST['cari'])) {
 
 ?>
 
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin_Dealer's Automotive</title>
-    <link rel="stylesheet" href="../css/">
-   
-  </head>
+    </head>
 <body>
 <?php require "../views/partials/nav.php"; ?>
 <div class="container">
     <h3 class="text-center py-3">Daftar Kendaraan</h3>
-
-    <!-- <a href="tambah.php" class="btn btn-info">Tambah Data Kendaraan</a>
-    <br><br> -->
-
     <form action="" method="POST">
         <input type="text" name="keyword" size="40" placeholder="masukan keyword pencarian....." autocomplete="off" autofocus class="keyword">
         <button type="submit" name="cari" class="tombol-cari">Cari</button>
@@ -76,16 +68,20 @@ if (isset($_POST['cari'])) {
                 <td><?= $p["harga"]; ?></td>
                 <td><?= $p["stok"]; ?></td>
                 <td>
-                    <a href="ubah.php?id=<?= $p['id']; ?>" class="btn btn-warning">Ubah</a><br>
+                    <a href="ubah.php?id=<?= $p['id']; ?>" class="btn btn-warning">Update</a><br>
                     <br>
-                    <a href="hapus.php?id=<?= $p['id']; ?>" onclick="return confirm ('apakah anda yakin?');" class="btn btn-danger">Hapus</a>
+                    <a href="hapus.php?id=<?= $p['id']; ?>" onclick="return confirm ('apakah anda yakin?');" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
                 <?php endforeach; ?>
     </table>
 </div>
 
-    <script src="../js/script.js"></script>
-<?php require'../views/partials/footer.php'; ?>
+<script src="../js/script.js"></script>
+
+<?php 
+require'../views/partials/footer.php'; 
+?>
+
  </body>
  </html>

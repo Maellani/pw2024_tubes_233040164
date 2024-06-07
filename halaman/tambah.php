@@ -31,8 +31,49 @@ if (isset($_POST['tambah'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tambah_Data_Kendaraan</title>
-    <link rel="stylesheet" href="../css/tambah.css">
-   
+    <style>
+        body {
+        color: #eee;
+        }
+
+        form {
+        max-width: 200%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #222;
+        text-align: center;
+        }
+
+        h3 {
+        text-align: center;
+        }
+
+        ul {
+        list-style: none;
+        padding: 0;
+        }
+
+        li {
+        margin-bottom: 10px;
+        }
+
+        label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: white;
+        }
+
+        input {
+        width: 100vh;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 50px;
+        background-color: transparent;
+        color: #eee;
+        }
+
+    </style>
   </head>
 <body>
     <h3 class="text-center py-3">Tambah Data Kendaraan</h3>
@@ -66,8 +107,8 @@ if (isset($_POST['tambah'])) {
         </ul>
     </form>
 
-    <?php
-    require'../views/partials/footer.php';
-    ?>
+<?php
+require'../views/partials/footer.php';
+?>
     
 
