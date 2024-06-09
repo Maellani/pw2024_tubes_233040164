@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 07, 2024 at 07:07 AM
+-- Generation Time: Jun 09, 2024 at 03:47 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -71,7 +71,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `level`) VALUES
 (3, 'admin', '$2y$10$SmZlGLWMn86t7aKoS3DHtO.VK6p3QG.FsdUXk0EyYT2z1cNXY5.c6', 'Admin'),
-(6, 'user', '$2y$10$PpvEMuS/gSV6axccWYTJfOElvzN0i9Su1fhymcuxeWci3P20tEbDO', 'User');
+(6, 'user', '$2y$10$PpvEMuS/gSV6axccWYTJfOElvzN0i9Su1fhymcuxeWci3P20tEbDO', 'User'),
+(17, 'mae', '$2y$10$G1yeEy48scrUbs.0fkjjPe4XsH3bIFV.3lrsHmhn2IY9mJQIC6j.C', 'User');
 
 --
 -- Indexes for dumped tables
@@ -97,13 +98,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
