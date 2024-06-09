@@ -33,7 +33,7 @@
       </section>
 
 <!-- Copyright -->
-<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">©Created by <a class="text-reset" href="https://github.com/Maellani">Maelani Ningrum</a></div>
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">©Created by <a class="text-reset" href="https://github.com/Maellani">Pw2024</a></div>
 <!-- Copyright -->
 </footer>
 

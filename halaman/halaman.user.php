@@ -72,7 +72,7 @@ require'../function/functions.php';
 
     <!-- About -->
     <section class="about container" id="about">
-        <img src="../img/about.jpg" alt="" width="750px">
+        <img src="../img/about.jpg" alt="" width="700px">
         <div class="about-text">
             <span>About Us</span>
             <h2>Dealer's Automotive <br> Quality Mobil</h2>
