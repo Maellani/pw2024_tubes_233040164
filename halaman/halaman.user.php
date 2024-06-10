@@ -1,5 +1,10 @@
 <?php 
 require'../function/functions.php';
+
+// ketika tombol cari diketik
+if (isset($_POST['cari'])) {
+  $product = cari($_POST['keyword']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +24,7 @@ require'../function/functions.php';
     <header>
        <div class="nav container">
         <!-- menu icon -->
-        <i class='bx bx-menu' id="menu-icon"></i>
+        <i class='fas fa-bars' id="menu-icon"></i>
         <a href="" class="logo">Dealer's <span>Automotive</span></a>
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
@@ -72,10 +77,12 @@ require'../function/functions.php';
 
     <!-- About -->
     <section class="about container" id="about">
+      <div class="about-img">
         <img src="../img/about.jpg" alt="" width="700px">
+      </div>
         <div class="about-text">
             <span>About Us</span>
-            <h2>Dealer's Automotive <br> Quality Mobil</h2>
+            <h2>Dealer's Automotive</h2>
             <p>Website dealer mobil ini adalah sebuah website yang dirancang khusus untuk menampilkan sebuah product dari beberapa mobil.</p>
         </div>
     </section>
@@ -86,6 +93,10 @@ require'../function/functions.php';
             <span>Our Details</span>
             <h2>Semua Jenis Mobil</h2>
             <p>Berikut ini detail beberapa jenis mobil dan spesifikasinya</p>
+            <form action="" method="POST">
+        <input type="text" name="keyword" size="40" placeholder="masukan keyword pencarian....." autocomplete="off" autofocus>
+        <button type="submit" name="cari" class="btn btn-danger">Cari</button>
+    </form>
         </div>
         <div class="container">
           <div class="row">

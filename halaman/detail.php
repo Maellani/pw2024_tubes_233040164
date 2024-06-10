@@ -27,32 +27,47 @@ $p = query("SELECT * FROM kendaraan WHERE id = $id");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
       a {
-        text-decoration: none !important;
+        text-decoration: none;
+      }
+
+      .container-card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 115vh;
       }
     </style>
   </head>
 <body>
-  <h3 class="text-center py-5">Detail Kendaraan</h3>
-  <div class="row">
-    <div class="col-5">
-      <img src="../img/<?= $p["image"]; ?>" width="575px">
-    </div>
-    <div class="col-7">
-      <ul style="list-style: none;" class="list-group border">
-      <li>Nama : <?= $p["nama"]; ?></li>
-      <li>Merk : <?= $p["merk"]; ?></li>
-      <li>Spesifikasi : <?= $p["spesifikasi"]; ?></li>
-      <li>Tahun : <?= $p["tahun"]; ?></li>
-      <li>Harga : <?= $p["harga"]; ?></li>
-      <li>Stok : <?= $p["stok"]; ?></li>
-      </ul> 
-    </div>
-    <br>
-    <div class="text-center">
-      <a href="../halaman/halaman.user.php#detail" class="btn btn-secondary">Kembali ke daftar kendaraan</a>
-    </div> 
+<div class="container-card">
+  <div class="card mb-3" style="width: 100%; max-width: 1200px; height: auto;">
+      <div class="row g-0">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="../img/<?= $p["image"]; ?>" class="img-fluid rounded-start" >
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3  style="font-weight: 400; text-align: center;">Detail Kendaraan</h3>
+            <p class="card-text">Nama : <?= $p["nama"]; ?></p>
+            <p class="card-text">Merk : <?= $p["merk"]; ?></p>
+            <hr>
+            <p class="card-text">Spesifikasi : </p>
+            <p class="card-text"><?= $p["spesifikasi"]; ?></p>
+            <hr>
+            <p class="card-text">Tahun : <?= $p["tahun"]; ?></p>
+            <p class="card-text">Harga : <?= $p["harga"]; ?></p>
+            <p class="card-text">Stok : <?= $p["stok"]; ?></p>
+            <hr>
+            <div class="text-center">
+                <a href="../halaman/halaman.user.php#detail" class="btn btn-secondary">Kembali ke daftar kendaraan</a>
+            </div> 
+          </div>
+        </div>
+      </div>
   </div>
-<br>
+</div>
+
+
 
 <!--FOOTER-->
  <footer class="text-center text-lg-start bg-dark text-white pt-4">
@@ -93,6 +108,6 @@ $p = query("SELECT * FROM kendaraan WHERE id = $id");
 
 
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">©Created by <a class="text-reset" href="https://github.com/Maellani">Maelani Ningrum</a></div>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">©Created by Dealer's Automotive</div>
       <!-- Copyright -->
     </footer>

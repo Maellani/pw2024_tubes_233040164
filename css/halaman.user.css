@@ -145,17 +145,19 @@ header {
 /* About */
 .about {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  text-align: center;
 }
 
-.about-img {
-  flex: 1 1 21rem;
+.about-img img {
+  display: block;
+  margin: 0 auto;
 }
 
 .about-text {
-  flex: 1 1 21rem;
+  margin-top: 20px;
 }
 
 .about-text span {

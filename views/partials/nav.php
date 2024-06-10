@@ -43,7 +43,7 @@
               <a class="nav-link" href="../halaman/tambah.php">Create</i></a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="../halaman/halaman.user.php">Users</a>
+              <a class="nav-link" href="../halaman/halaman.user.php#home">Users</a>
             </li>
           <ul class="navbar-nav mx-3 mb-lg-0 action-menu">
             <li class="nav-item">
