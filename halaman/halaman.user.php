@@ -94,9 +94,9 @@ if (isset($_POST['cari'])) {
             <h2>Semua Jenis Mobil</h2>
             <p>Berikut ini detail beberapa jenis mobil dan spesifikasinya</p>
             <form action="" method="POST">
-        <input type="text" name="keyword" size="40" placeholder="masukan keyword pencarian....." autocomplete="off" autofocus>
-        <button type="submit" name="cari" class="btn btn-danger">Cari</button>
-    </form>
+              <input type="text" name="keyword" size="40" placeholder="masukan keyword pencarian....." autocomplete="off" autofocus>
+              <button type="submit" name="cari" class="btn btn-danger">Cari</button>
+            </form>
         </div>
         <div class="container">
           <div class="row">
@@ -121,7 +121,7 @@ if (isset($_POST['cari'])) {
                     <?php endforeach; ?>
                     </div>
                     </div>
-          
+    </section> 
     <!--Contact -->
     <section class="container" id="contact">
         <div class="container">
